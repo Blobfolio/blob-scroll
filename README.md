@@ -66,6 +66,7 @@ for (let i = 0; i < links.length; ++i) {
 ## Settings
 
 | Type | Name | Description | Default |
+| ---- | ---- | ----------- | ------- |
 | *DOMElement* | Parent | To animate a scroll within an element on the page, pass it. Otherwise scrolling will be applied to the window. | `document.documentElement` |
 | *string* | Axis | Scroll direction, either `"y"` or `"x"`. | `"y"` |
 | *int* | Offset | This value is added to the scroll target. Useful for working around sticky headers, etc. Negative values scroll past the target, positive ones come up short. | `0` |
