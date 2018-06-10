@@ -1,6 +1,6 @@
 # blob-scroll
 
-`blob-scroll` is a lightweight Javascript library for triggering smooth scrolling events. It is dependency-free, so can be integrated into existing code bases with minimal effort.
+`blob-scroll` is a lightweight, dependency-free Javascript library for triggering smooth scrolling events. It supports horizontal and vertical scrolling within the page or an individual element, with customizable speeds and easing effects.
 
 &nbsp;
 
