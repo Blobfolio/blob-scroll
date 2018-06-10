@@ -35,7 +35,7 @@ This method will scroll smoothly to the desired target. If no arguments are pass
 
 | Type | Name | Description |
 | ---- | ---- | ----------- |
-| *DOMElement*/*int* | Scroll To | Either an element, a querySelector string, or a numeric pixel value. |
+| *DOMElement* or *int* | Scroll To | Either an element, a querySelector string, or a numeric pixel value. |
 | *object* | Settings | See [below](#settings) for a complete list. |
 
 #### Examples
