@@ -38,6 +38,8 @@ This method will scroll smoothly to the desired target. If no arguments are pass
 | *DOMElement*/*int* | Scroll To | Either an element, a querySelector string, or a numeric pixel value. |
 | *object* | Settings | See [below](#settings) for a complete list. |
 
+#### Examples
+
 ```js
 // Scroll to #foobar.
 blobScroll.scroll(document.getElementById('foobar'), { yourSettings… });
@@ -48,6 +50,15 @@ blobScroll.scroll(500, { … });
 
 // Just go to the top of the page.
 blobScroll.scroll();
+
+// Automatically have all internal links scroll smoothly.
+const links = document.querySelectorAll('a[href^="#"]');
+for (let i = 0; i < links.length; ++i) {
+    links[i].addEventListener('click', function(e) {
+        e.preventDefault();
+        blobScroll.scroll(e.target.getAttribute('href'));
+    });    
+}
 ```
 
 &nbsp;
