@@ -69,7 +69,7 @@ for (let i = 0; i < links.length; ++i) {
 | ---- | ---- | ----------- | ------- |
 | *DOMElement* | Parent | To animate a scroll within an element on the page, pass it. Otherwise scrolling will be applied to the window. | `document.documentElement` |
 | *string* | Axis | Scroll direction, either `"y"` or `"x"`. | `"y"` |
-| *int* | Offset | This value is added to the scroll target. Useful for working around sticky headers, etc. Negative values scroll past the target, positive ones come up short. | `0` |
+| *int* | Offset | If supplied, this value is added to the scroll target. Negative values scroll past the target, positive ones come up short. | `0` |
 | *int* | Duration | Scroll animation length in milliseconds. | `500` |
 | *string* | Easing Effect | One of the easing effects listed below. | `"ease"` |
 | *function* | Callback | A function to execute after scrolling has completed. | `NULL` |
