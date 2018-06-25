@@ -41,6 +41,10 @@ var blobScroll = {
 			callback: null,
 		};
 
+		if ('object' !== typeof args) {
+			args = {};
+		}
+
 		// The scroll axis.
 		if (
 			('string' === typeof args.axis) &&
