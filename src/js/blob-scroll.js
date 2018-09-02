@@ -177,14 +177,26 @@ var blobScroll = {
 	 * @returns {bool} True/false.
 	 */
 	isElement: function(el) {
-		try {
-			if (el.constructor.__proto__.prototype.constructor.name) {
-				return true;
-			}
-			return false;
-		} catch (e) {
-			return false;
-		}
+		return (
+			// Easy Node check.
+			(('object' === typeof Node) && el instanceof Node) ||
+			// Uglier Node check.
+			(
+				el &&
+				('object' === typeof el) &&
+				('number' === typeof el.nodeType) &&
+				('string' === typeof el.nodeName)
+			) ||
+			// DOM2 check.
+			(('object' === typeof HTMLElement) && el instanceof HTMLElement) ||
+			(
+				el &&
+				('object' === typeof el) &&
+				(null !== el) &&
+				(1 === el.nodeType) &&
+				('string' === typeof el.nodeName)
+			)
+		);
 	},
 
 	/**
