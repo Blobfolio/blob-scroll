@@ -34,7 +34,7 @@ var blobScroll = {
 			// scroll, provide a positive one.
 			offset: 0,
 			// The parent. Default is the window.
-			parent: document.documentElement,
+			parent: document.scrollingElement || document.documentElement,
 			// The type of scroll easing to use.
 			transition: 'ease',
 			// Optional callback to execute when finished.
@@ -70,6 +70,27 @@ var blobScroll = {
 		) {
 			settings.parent = args.parent;
 		}
+		else {
+			// Microsoft can't decide between document.documentElement
+			// and document.body for scrolling. To make matters worse,
+			// some versions support getting the current scrollTop on
+			// both, but only support setting for one. To know which is
+			// which for the user, we have to try to scroll and see
+			// what happens.
+			let tmp = settings.parent.scrollTop;
+			if (0 < tmp) {
+				tmp -= 1;
+			}
+			else {
+				tmp += 1;
+			}
+
+			settings.parent.scrollTop = tmp;
+			if (settings.parent.scrollTop !== tmp) {
+				settings.parent = document.body;
+			}
+		}
+
 
 		// Transition type.
 		if (
